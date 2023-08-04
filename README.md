@@ -29,6 +29,20 @@ php artisan serve
 
 _En primer lugar y lo más importante, Laravel 9 requiere la última versión de PHP 8 y PHPUnit 8 para las pruebas. Esto se debe a que este nuevo Laravel utilizará la última versión de Symfony 6.0, la cual también requiere PHP 8_
 
+### error No such file or directory autoload.php
+
+Si al intentar ejecutar el projecto arroja un error que dice algo así:
+
+Warning: require(ruta\proyecto\public/../vendor/autoload.php failed to open stream: No such file or directory in ruta\proyecto.
+Fatal error: require(): Failed opening required…
+
+La solución es navegar hasta la raíz de nuestro proyecto desde la terminal y ejecutar:
+```
+composer install
+```
+Esto empieza a descargar las dependencias y generará automáticamente el archivo autoload.php. De esta manera, el problema tendría que desaparecer.
+
+
 ## RegistrApp está construido con 🛠️
 
 _Menciona las herramientas que utilizaste para crear tu proyecto_
