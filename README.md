@@ -29,7 +29,7 @@ php artisan serve
 
 _En primer lugar y lo más importante, Laravel 9 requiere la última versión de PHP 8 y PHPUnit 8 para las pruebas. Esto se debe a que este nuevo Laravel utilizará la última versión de Symfony 6.0, la cual también requiere PHP 8_
 
-### error No such file or directory autoload.php
+### Error No such file or directory autoload.php
 
 Si al intentar ejecutar el projecto arroja un error que dice algo así:
 
@@ -41,6 +41,31 @@ La solución es navegar hasta la raíz de nuestro proyecto desde la terminal y e
 composer install
 ```
 Esto empieza a descargar las dependencias y generará automáticamente el archivo autoload.php. De esta manera, el problema tendría que desaparecer.
+
+
+### Error Vite manifest not found
+i al intentar ejecutar el projecto arroja un error que dice algo así:
+
+Vite manifest not found at: C:\Users\HP\example-app\public\/build/manifest.json
+
+La solución es navegar hasta la raíz del proyecto desde la terminal y ejecutar los siguientes comandos:
+```
+npm install
+```
+```
+ npm run build
+```
+```
+npm run dev
+```
+En el archivo package.json debe aparecer la siguiente línea:
+```
+"scripts": {
+    "dev": "vite",
+    "build": "vite build"
+}
+```
+En una nueva terminal inicia php artian serve y listo, el problema debe estar solucionado
 
 
 ## RegistrApp está construido con 🛠️
